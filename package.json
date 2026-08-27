@@ -1,6 +1,8 @@
 {
   "$schema": "https://www.raycast.com/schemas/extension.json",
   "name": "gif-search",
+  "id": "com.tezbar.gif-search",
+  "version": "0.1.0",
   "title": "GIF Search",
   "description": "Search the Internet for animated GIFs",
   "icon": "command-icon.png",
@@ -39,21 +41,33 @@
       "name": "search",
       "title": "Search for GIFs",
       "description": "Search for GIFs across multiple services…",
-      "mode": "view"
+      "mode": "view",
+      "platforms": [
+        "macOS",
+        "Windows"
+      ]
     },
     {
       "name": "favorites",
       "title": "Browse Favorite GIFs",
       "description": "Browse and search your favorite GIFs across all services",
       "mode": "view",
-      "icon": "favorites-icon.png"
+      "icon": "favorites-icon.png",
+      "platforms": [
+        "macOS",
+        "Windows"
+      ]
     },
     {
       "name": "recents",
       "title": "Browse Recent GIFs",
       "description": "Browse and search your recently used GIFs across all services",
       "mode": "view",
-      "icon": "recents-icon.png"
+      "icon": "recents-icon.png",
+      "platforms": [
+        "macOS",
+        "Windows"
+      ]
     }
   ],
   "preferences": [
@@ -398,5 +412,17 @@
     "fix-lint": "ray lint --fix",
     "lint": "ray lint",
     "publish": "npx @raycast/api@latest publish"
+  },
+  "tezbar": {
+    "schemaVersion": 1,
+    "platforms": [
+      "windows",
+      "macos"
+    ],
+    "upstream": {
+      "repository": "https://github.com/raycast/extensions",
+      "path": "extensions/gif-search",
+      "commit": "1e0b5af8314a44beb6c5bfc99b9304c8714d9a73"
+    }
   }
 }

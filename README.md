@@ -1,4 +1,8 @@
-Elevat your Mac workflow with the GIF Search extension. This extension searches for animated GIFs from the internet using [Giphy](https://giphy.com), [Klipy](https://klipy.com), or [The Finer Gifs Club](https://thefinergifs.club). Switch between the various services using the search bar dropdown.
+# GIF Search
+
+Elevate your macOS or Windows workflow with the GIF Search extension. This extension searches for animated GIFs from the internet using [Giphy](https://giphy.com), [Klipy](https://klipy.com), or [The Finer Gifs Club](https://thefinergifs.club). Switch between the various services using the search bar dropdown.
+
+The manifest enables macOS and Windows. Copying, pasting, downloading, favorites, and recents are cross-platform; the optional "Copy GIF Square" action remains macOS-only because it uses Apple's Swift image frameworks and is hidden on Windows.
 
 ## **Discover the Perfect GIF in Seconds**
 
