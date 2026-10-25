@@ -1,0 +1,411 @@
+{
+  "schemaVersion": 3,
+  "id": "com.tezbar.native.gif-search",
+  "slug": "gif-search",
+  "name": "GIF Search",
+  "version": "1.0.0",
+  "description": "Search the Internet for animated GIFs",
+  "author": "josephschmitt",
+  "icon": "resources/assets/command-icon.png",
+  "runtime": "rust",
+  "replaces": [
+    "raycast.gif-search"
+  ],
+  "platforms": [
+    "macOS",
+    "Windows"
+  ],
+  "preferences": [
+    {
+      "name": "gridItemSize",
+      "type": "dropdown",
+      "required": false,
+      "title": "Grid Item Size",
+      "description": "Control the size of individual grid cells",
+      "default": "medium",
+      "data": [
+        {
+          "title": "Small",
+          "value": "small"
+        },
+        {
+          "title": "Medium",
+          "value": "medium"
+        },
+        {
+          "title": "Large",
+          "value": "large"
+        }
+      ]
+    },
+    {
+      "name": "gridTrendingItemSize",
+      "type": "dropdown",
+      "required": false,
+      "title": "Grid Trending Item Size",
+      "description": "Control the size of individual grid cells in the Trending view",
+      "default": "medium",
+      "data": [
+        {
+          "title": "Small",
+          "value": "small"
+        },
+        {
+          "title": "Medium",
+          "value": "medium"
+        },
+        {
+          "title": "Large",
+          "value": "large"
+        }
+      ]
+    },
+    {
+      "name": "maxResults",
+      "type": "textfield",
+      "required": false,
+      "default": "20",
+      "title": "Max Results",
+      "description": "Max number of results to return for a search"
+    },
+    {
+      "name": "defaultAction",
+      "type": "dropdown",
+      "required": false,
+      "title": "Default Action",
+      "description": "Customize what happens when hitting ENTER on a Gif",
+      "default": "copyFile",
+      "data": [
+        {
+          "title": "Copy GIF",
+          "value": "copyFile"
+        },
+        {
+          "title": "Paste GIF",
+          "value": "pasteFile"
+        },
+        {
+          "title": "Copy GIF Link",
+          "value": "copyGifUrl"
+        },
+        {
+          "title": "Paste GIF Link",
+          "value": "pasteGifUrl"
+        },
+        {
+          "title": "Copy GIF Markdown",
+          "value": "copyGifMarkdown"
+        },
+        {
+          "title": "Paste GIF Markdown",
+          "value": "pasteGifMarkdown"
+        },
+        {
+          "title": "Add or Remove from Favorites",
+          "value": "toggleFav"
+        },
+        {
+          "title": "View GIF Details",
+          "value": "viewDetails"
+        },
+        {
+          "title": "Copy GIF Square",
+          "value": "copySquareGif"
+        },
+        {
+          "title": "Paste GIF Square",
+          "value": "pasteSquareGif"
+        },
+        {
+          "title": "Copy Page Link",
+          "value": "copyPageUrl"
+        },
+        {
+          "title": "Open in Browser",
+          "value": "openUrlInBrowser"
+        },
+        {
+          "title": "Download GIF",
+          "value": "downloadFile"
+        }
+      ]
+    },
+    {
+      "name": "downloadPath",
+      "title": "GIF Download Path",
+      "description": "Path to save downloaded GIFs",
+      "type": "directory",
+      "required": false
+    },
+    {
+      "name": "hideFilename",
+      "type": "checkbox",
+      "required": false,
+      "title": "Hide Filename on Copy or Download",
+      "description": "Hide the original filename when copying or downloading GIFs",
+      "default": false,
+      "label": "Hide Filename"
+    },
+    {
+      "name": "giphyLocale",
+      "type": "dropdown",
+      "required": false,
+      "title": "Giphy Locale",
+      "description": "Select the locale for the Giphy API",
+      "default": "en",
+      "data": [
+        {
+          "title": "English",
+          "value": "en"
+        },
+        {
+          "title": "Spanish",
+          "value": "es"
+        },
+        {
+          "title": "Portuguese",
+          "value": "pt"
+        },
+        {
+          "title": "Indonesian",
+          "value": "id"
+        },
+        {
+          "title": "French",
+          "value": "fr"
+        },
+        {
+          "title": "Arabic",
+          "value": "ar"
+        },
+        {
+          "title": "Turkish",
+          "value": "tr"
+        },
+        {
+          "title": "Thai",
+          "value": "th"
+        },
+        {
+          "title": "Vietnamese",
+          "value": "vi"
+        },
+        {
+          "title": "German",
+          "value": "de"
+        },
+        {
+          "title": "Italian",
+          "value": "it"
+        },
+        {
+          "title": "Japanese",
+          "value": "ja"
+        },
+        {
+          "title": "Chinese Simplified",
+          "value": "zh-CN"
+        },
+        {
+          "title": "Chinese Traditional",
+          "value": "zh-TW"
+        },
+        {
+          "title": "Russian",
+          "value": "ru"
+        },
+        {
+          "title": "Korean",
+          "value": "ko"
+        },
+        {
+          "title": "Polish",
+          "value": "pl"
+        },
+        {
+          "title": "Dutch",
+          "value": "nl"
+        },
+        {
+          "title": "Romanian",
+          "value": "ro"
+        },
+        {
+          "title": "Hungarian",
+          "value": "hu"
+        },
+        {
+          "title": "Swedish",
+          "value": "sv"
+        },
+        {
+          "title": "Czech",
+          "value": "cs"
+        },
+        {
+          "title": "Hindi",
+          "value": "hi"
+        },
+        {
+          "title": "Bengali",
+          "value": "bn"
+        },
+        {
+          "title": "Danish",
+          "value": "da"
+        },
+        {
+          "title": "Farsi",
+          "value": "fa"
+        },
+        {
+          "title": "Filipino",
+          "value": "tl"
+        },
+        {
+          "title": "Finnish",
+          "value": "fi"
+        },
+        {
+          "title": "Hebrew",
+          "value": "he"
+        },
+        {
+          "title": "Malay",
+          "value": "ms"
+        },
+        {
+          "title": "Norwegian",
+          "value": "no"
+        },
+        {
+          "title": "Ukrainian",
+          "value": "uk"
+        }
+      ]
+    },
+    {
+      "name": "klipyLocale",
+      "type": "dropdown",
+      "required": false,
+      "title": "Klipy Locale",
+      "description": "Select the locale for the Klipy API",
+      "default": "en",
+      "data": [
+        {
+          "title": "English",
+          "value": "en"
+        },
+        {
+          "title": "Spanish",
+          "value": "es"
+        },
+        {
+          "title": "French",
+          "value": "fr"
+        },
+        {
+          "title": "German",
+          "value": "de"
+        },
+        {
+          "title": "Italian",
+          "value": "it"
+        },
+        {
+          "title": "Portuguese",
+          "value": "pt"
+        },
+        {
+          "title": "Japanese",
+          "value": "ja"
+        },
+        {
+          "title": "Korean",
+          "value": "ko"
+        },
+        {
+          "title": "Chinese Simplified",
+          "value": "zh-CN"
+        },
+        {
+          "title": "Chinese Traditional",
+          "value": "zh-TW"
+        }
+      ]
+    }
+  ],
+  "commands": [
+    {
+      "name": "search",
+      "title": "Search for GIFs",
+      "description": "Search for GIFs across multiple services\u2026",
+      "mode": "view",
+      "platforms": [
+        "macOS",
+        "Windows"
+      ],
+      "runtime": "rust",
+      "timeoutMs": 120000,
+      "concurrency": "serialize",
+      "refreshMs": 500
+    },
+    {
+      "name": "favorites",
+      "title": "Browse Favorite GIFs",
+      "description": "Browse and search your favorite GIFs across all services",
+      "mode": "view",
+      "platforms": [
+        "macOS",
+        "Windows"
+      ],
+      "runtime": "rust",
+      "timeoutMs": 120000,
+      "concurrency": "serialize",
+      "refreshMs": 500
+    },
+    {
+      "name": "recents",
+      "title": "Browse Recent GIFs",
+      "description": "Browse and search your recently used GIFs across all services",
+      "mode": "view",
+      "platforms": [
+        "macOS",
+        "Windows"
+      ],
+      "runtime": "rust",
+      "timeoutMs": 120000,
+      "concurrency": "serialize",
+      "refreshMs": 500
+    }
+  ],
+  "verification": [
+    {
+      "platform": "macOS",
+      "state": "not-run"
+    },
+    {
+      "platform": "Windows",
+      "state": "not-run"
+    }
+  ],
+  "execution": "process",
+  "protocolVersion": 1,
+  "repository": "https://github.com/almatkai/gif-search",
+  "artifacts": {},
+  "capabilities": [
+    "host.clipboard.write",
+    "host.clipboard.writeFiles",
+    "host.clipboard.paste",
+    "host.clipboard.pasteText",
+    "host.shell.open",
+    "host.shell.reveal",
+    "host.window.visibility"
+  ],
+  "migrationPaths": {
+    "gif-search.legacy-storage": "extensions/gif-search/.tezbar-local-storage.json",
+    "gif-search.legacy-package-storage": "extensions/packages/raycast.gif-search/.tezbar-local-storage.json",
+    "gif-search.native-v2-store": "native-extensions-v2/gif-search/storage.json"
+  },
+  "files": {}
+}

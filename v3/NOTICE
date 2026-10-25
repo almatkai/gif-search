@@ -1,0 +1,21 @@
+GIF Search standalone Rust extraction
+
+Native domain implementation extracted from Tezbar commit
+fe71ca87f21ac4ff31505010c228f8abda0f2a89,
+src-tauri/src/native_core/extensions/v2_gif_search.rs.
+Tezbar Apache-2.0 license is retained verbatim in LICENSE.
+
+Provider mappings, preferences and action semantics originate in the Raycast
+GIF Search extension by josephschmitt and its contributors, MIT licensed.
+The exact Raycast MIT notice is retained in licenses/raycast-extensions-MIT.txt.
+The existing repository TypeScript sources and UPSTREAM.md are preserved.
+Original installed artwork is retained without modification; no trademark
+rights or independent authorship of the artwork are claimed.
+
+provenance/source.json and provenance/input-index.json record exact extracted
+file origins and SHA-256 hashes. The installed package revision is unknown;
+the separately pinned upstream snapshot is metadata context, not the asserted
+revision of the installed assets. No API credentials are embedded.
+
+Rust dependencies are resolved in Cargo.lock under their respective licenses.
+The SDK is pinned to git revision 9f91afcc071c3f301414dc62b33cfeac7d89a0cf.

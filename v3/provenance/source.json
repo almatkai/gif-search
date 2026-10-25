@@ -1,0 +1,300 @@
+{
+  "slug": "gif-search",
+  "status": "source-inputs-only",
+  "standalone": false,
+  "source_pack_complete_for_research": true,
+  "repository": "almatkai/gif-search",
+  "repository_exists_at_inventory": true,
+  "repository_visibility": "public",
+  "repository_proposed_name": "gif-search",
+  "publish_allowed": "not-approved; research inputs need integration/license review",
+  "app_base": "fe71ca87f21ac4ff31505010c228f8abda0f2a89",
+  "app_branch": "fix/beta15-external-rust-extensions",
+  "source_sha256": "6c883ab32ee0071eb5b3f8fdbbbdaba39f81ad225298223cefdcdafbfe2536da",
+  "source_module": "src-tauri/src/native_core/extensions/v2_gif_search.rs",
+  "manifest": "manifest.v2.json",
+  "manifest_icon_original_copied": true,
+  "manifest_asset_references": [
+    "command-icon.png"
+  ],
+  "actual_missing_assets": [],
+  "commands": 3,
+  "runtime_validation": "not-run",
+  "remaining_port_couplings": "Host views/store/media/file clipboard/paste and hide/reveal routes; OS clipboard commands; HTTP image/animation codecs. Installed code uses Raycast GIPHY/Klipy proxy, no embedded key, plus FinerGifs; proxy access/credentials policies must be validated independently.",
+  "host_request_routes": [
+    "core:platform:paste",
+    "core:platform:paste-text",
+    "core:platform:reveal-file",
+    "window:hide"
+  ],
+  "sdk_functions": [
+    "copy",
+    "encode_component",
+    "no_view",
+    "open",
+    "read_store",
+    "unchanged",
+    "update_store",
+    "view"
+  ],
+  "license_notices": [
+    "App LICENSE retained exactly (Apache-2.0, existing Almat notice); retain Raycast MIT and original author/contributor metadata; not one license for all third-party assets. Original icons preserved; no trademark grant or independent authorship invented."
+  ],
+  "helper_downloads": [],
+  "installed_public_metadata": {
+    "author": "josephschmitt",
+    "contributors": [
+      "tm.wrnr",
+      "j3lte",
+      "samuelkraft",
+      "ridemountainpig",
+      "spookywy",
+      "seanparkross",
+      "YourMCGeek",
+      "thomas",
+      "tim_gailey",
+      "clins1994",
+      "0xdhrv"
+    ],
+    "license": "MIT",
+    "version": null
+  },
+  "installed_upstream_exact_commit": "unknown",
+  "upstream_snapshot": {
+    "slug": "gif-search",
+    "repository": "raycast/extensions",
+    "snapshot_commit": "97ee2594a03a94fa439c26864d85ad9a96dc9fc9",
+    "installed_exact_upstream_commit": "unknown",
+    "extension_path": "extensions/gif-search",
+    "errors": []
+  },
+  "existing_repository_upstream": {
+    "repository": "raycast/extensions",
+    "path": "extensions/gif-search",
+    "commit": "1e0b5af8314a44beb6c5bfc99b9304c8714d9a73"
+  },
+  "installed_bundle_hash_evidence": [
+    {
+      "path": "/Users/almat/Library/Application Support/com.tezbar.app/extensions/gif-search/.sc-build/favorites.js",
+      "size": 446751,
+      "sha256": "e49903555247b0e545fa91457e05c819d91ffbd2395ca920c318faed1c457062",
+      "copied": false
+    },
+    {
+      "path": "/Users/almat/Library/Application Support/com.tezbar.app/extensions/gif-search/.sc-build/recents.js",
+      "size": 446735,
+      "sha256": "482a6b6acd596d4b6534b14febb4d643ef40bc17b4e07a99dfef836da156bf69",
+      "copied": false
+    },
+    {
+      "path": "/Users/almat/Library/Application Support/com.tezbar.app/extensions/gif-search/.sc-build/search.js",
+      "size": 452006,
+      "sha256": "ed663000556e1f2b599b94579f50555bb79e60aa027bfbf317d0572d2159e384",
+      "copied": false
+    }
+  ],
+  "files": [
+    {
+      "package": "gif-search",
+      "path": "src-tauri/src/native_core/extensions/v2_gif_search.rs",
+      "size": 82236,
+      "sha256": "6c883ab32ee0071eb5b3f8fdbbbdaba39f81ad225298223cefdcdafbfe2536da",
+      "origin": {
+        "type": "app-git",
+        "commit": "fe71ca87f21ac4ff31505010c228f8abda0f2a89",
+        "path": "src-tauri/src/native_core/extensions/v2_gif_search.rs"
+      }
+    },
+    {
+      "package": "gif-search",
+      "path": "LICENSE",
+      "size": 10750,
+      "sha256": "0ed6b1b2760294d4aaaa45be38e166fcc0168e1dd5190423c096fcbe1c94afbf",
+      "origin": {
+        "type": "app-git",
+        "commit": "fe71ca87f21ac4ff31505010c228f8abda0f2a89",
+        "path": "LICENSE"
+      }
+    },
+    {
+      "package": "gif-search",
+      "path": "licenses/raycast-extensions-MIT.txt",
+      "size": 1064,
+      "sha256": "7f727f8b20cdd0e65f84e70b9cac2fce337dcecee4dc88955eb012ea27f02755",
+      "origin": {
+        "type": "app-git",
+        "commit": "fe71ca87f21ac4ff31505010c228f8abda0f2a89",
+        "path": "licenses/raycast-extensions-MIT.txt"
+      }
+    },
+    {
+      "package": "gif-search",
+      "path": "manifest.v2.json",
+      "size": 8438,
+      "sha256": "148be6f0c7b486ff3b8f8b6265877e2a41e13a348b11cb220f2f2e1a8960cbd4",
+      "origin": {
+        "type": "catalog-selection",
+        "path": "src-tauri/src/native_core/extensions/v2_catalog.json",
+        "commit": "fe71ca87f21ac4ff31505010c228f8abda0f2a89",
+        "catalog_sha256": "a9f82ddd782dc56b3ed43b9d4d51651ce10a51a368a7befc942f200b2601e955"
+      },
+      "note": "Selected unmodified JSON object; serialization only. Runtime/verification declarations are not validation."
+    },
+    {
+      "package": "gif-search",
+      "path": "provenance/installed-package.json",
+      "size": 8674,
+      "sha256": "eedaf758b3b1bcbca3797cfea7f319f8ea4e7bfe84d670a89ba63d0ad35fff0d",
+      "origin": {
+        "type": "local-read-only",
+        "path": "/Users/almat/Library/Application Support/com.tezbar.app/extensions/gif-search/package.json"
+      },
+      "note": "Original public package metadata only; no preferences/storage/cache copied."
+    },
+    {
+      "package": "gif-search",
+      "path": "assets/command-icon.png",
+      "size": 29075,
+      "sha256": "a774b0462f0a035a54df8daec5eb4adbe90840fddb23df01b22005918889753f",
+      "origin": {
+        "type": "local-read-only",
+        "path": "/Users/almat/Library/Application Support/com.tezbar.app/extensions/gif-search/assets/command-icon.png"
+      },
+      "redistribution_review": "Upstream metadata declares MIT; original branding retained, no trademark grant inferred."
+    },
+    {
+      "package": "gif-search",
+      "path": "assets/favorites-icon.png",
+      "size": 4819,
+      "sha256": "a648f1181fc13ebb4cf30364b76dafd123a542dc0e54e8ef638401fb63c84a98",
+      "origin": {
+        "type": "local-read-only",
+        "path": "/Users/almat/Library/Application Support/com.tezbar.app/extensions/gif-search/assets/favorites-icon.png"
+      },
+      "redistribution_review": "Upstream metadata declares MIT; original branding retained, no trademark grant inferred."
+    },
+    {
+      "package": "gif-search",
+      "path": "assets/finergifs-logo.svg",
+      "size": 6440,
+      "sha256": "b13cd939e441e8ab9c1f60a7ca7b8837e9479e5d604c14e9afef33eb269ca472",
+      "origin": {
+        "type": "local-read-only",
+        "path": "/Users/almat/Library/Application Support/com.tezbar.app/extensions/gif-search/assets/finergifs-logo.svg"
+      },
+      "redistribution_review": "Upstream metadata declares MIT; original branding retained, no trademark grant inferred."
+    },
+    {
+      "package": "gif-search",
+      "path": "assets/giphy-logo-square-180.png",
+      "size": 505,
+      "sha256": "0b179bb060fce9055377be2a9746447a4ec6ccbd2db213df387b3e9faf351a4a",
+      "origin": {
+        "type": "local-read-only",
+        "path": "/Users/almat/Library/Application Support/com.tezbar.app/extensions/gif-search/assets/giphy-logo-square-180.png"
+      },
+      "redistribution_review": "Upstream metadata declares MIT; original branding retained, no trademark grant inferred."
+    },
+    {
+      "package": "gif-search",
+      "path": "assets/klipy-logo-square-180.png",
+      "size": 4089,
+      "sha256": "8563b6ed264210afde506f4939b9f15d5bd897eb43817e055f9885948d1c9389",
+      "origin": {
+        "type": "local-read-only",
+        "path": "/Users/almat/Library/Application Support/com.tezbar.app/extensions/gif-search/assets/klipy-logo-square-180.png"
+      },
+      "redistribution_review": "Upstream metadata declares MIT; original branding retained, no trademark grant inferred."
+    },
+    {
+      "package": "gif-search",
+      "path": "assets/klipy-logo-watermark.png",
+      "size": 1875,
+      "sha256": "0caf6d4b305ec4b5c35e30a0e08ccc77ffa484828fbee955ebfd1be409c413fa",
+      "origin": {
+        "type": "local-read-only",
+        "path": "/Users/almat/Library/Application Support/com.tezbar.app/extensions/gif-search/assets/klipy-logo-watermark.png"
+      },
+      "redistribution_review": "Upstream metadata declares MIT; original branding retained, no trademark grant inferred."
+    },
+    {
+      "package": "gif-search",
+      "path": "assets/recents-icon.png",
+      "size": 7493,
+      "sha256": "8b314c242776ea0a5e2349cf1fe359acae5c58de2ff9fa3b4ae74a9b4f2028f3",
+      "origin": {
+        "type": "local-read-only",
+        "path": "/Users/almat/Library/Application Support/com.tezbar.app/extensions/gif-search/assets/recents-icon.png"
+      },
+      "redistribution_review": "Upstream metadata declares MIT; original branding retained, no trademark grant inferred."
+    },
+    {
+      "package": "gif-search",
+      "path": "provenance/existing-repository/LICENSE",
+      "size": 1064,
+      "sha256": "7f727f8b20cdd0e65f84e70b9cac2fce337dcecee4dc88955eb012ea27f02755",
+      "origin": {
+        "type": "existing-repository-git",
+        "repository": "almatkai/gif-search",
+        "commit": "ff4ff51e0628da8771cdcd7969c5d9d563ead16c",
+        "path": "LICENSE"
+      },
+      "visibility": "public"
+    },
+    {
+      "package": "gif-search",
+      "path": "provenance/existing-repository/UPSTREAM.md",
+      "size": 383,
+      "sha256": "3d98d8f6cb258645a62948134cd9c22989126b1ae5418c969ff9a28407ea0d02",
+      "origin": {
+        "type": "existing-repository-git",
+        "repository": "almatkai/gif-search",
+        "commit": "ff4ff51e0628da8771cdcd7969c5d9d563ead16c",
+        "path": "UPSTREAM.md"
+      },
+      "visibility": "public"
+    },
+    {
+      "package": "gif-search",
+      "path": "provenance/upstream-directory.json",
+      "size": 15441,
+      "sha256": "430824d99a7639c76e4c99a37b1b6f037aa083d8044b05cbdd62ae8748da4a52",
+      "origin": {
+        "type": "github-api",
+        "repository": "raycast/extensions",
+        "commit": "97ee2594a03a94fa439c26864d85ad9a96dc9fc9",
+        "path": "extensions/gif-search"
+      }
+    },
+    {
+      "package": "gif-search",
+      "path": "provenance/current-upstream/README.md",
+      "size": 3262,
+      "sha256": "ed8111f467d2e80f069c38fcb5bfe8782b9764e9732762d4650818a965993aac",
+      "origin": {
+        "type": "https",
+        "url": "https://raw.githubusercontent.com/raycast/extensions/97ee2594a03a94fa439c26864d85ad9a96dc9fc9/extensions/gif-search/README.md"
+      }
+    },
+    {
+      "package": "gif-search",
+      "path": "provenance/current-upstream/package.json",
+      "size": 8957,
+      "sha256": "bcae9601c65c50a4051fb994f9b1d99e37cb67f26f2f85efe88deb0c834f0392",
+      "origin": {
+        "type": "https",
+        "url": "https://raw.githubusercontent.com/raycast/extensions/97ee2594a03a94fa439c26864d85ad9a96dc9fc9/extensions/gif-search/package.json"
+      }
+    },
+    {
+      "package": "gif-search",
+      "path": "provenance/current-upstream/repository-LICENSE",
+      "size": 1064,
+      "sha256": "7f727f8b20cdd0e65f84e70b9cac2fce337dcecee4dc88955eb012ea27f02755",
+      "origin": {
+        "type": "https",
+        "url": "https://raw.githubusercontent.com/raycast/extensions/97ee2594a03a94fa439c26864d85ad9a96dc9fc9/LICENSE"
+      }
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+name: Native Rust
+on:
+  push:
+    paths: ['v3/**', '.github/workflows/native-rust.yml']
+  pull_request:
+    paths: ['v3/**', '.github/workflows/native-rust.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  native:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - os: macos-15
+            target: aarch64-apple-darwin
+            executable: tezbar-gif-search
+          - os: windows-2022
+            target: x86_64-pc-windows-msvc
+            executable: tezbar-gif-search.exe
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 25
+    defaults:
+      run:
+        working-directory: v3
+        shell: bash
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: dtolnay/rust-toolchain@stable
+        with:
+          components: rustfmt, clippy
+          targets: ${{ matrix.target }}
+      - name: Verify native build host
+        run: |
+          rustc -vV
+          python -c "import subprocess; assert 'host: ${{ matrix.target }}' in subprocess.check_output(['rustc','-vV'], text=True)"
+      - run: cargo fmt --check
+      - run: cargo clippy --locked --all-targets --all-features -j1 -- -D warnings
+      - run: cargo test --locked --all-features -j1 -- --test-threads=1
+      - run: cargo build --locked --release --target ${{ matrix.target }} -j1
+      - run: python scripts/package.py --target ${{ matrix.target }} --binary target/${{ matrix.target }}/release/${{ matrix.executable }}
+      - run: python scripts/smoke-package.py --archive dist/gif-search-${{ matrix.target }}.zip --target ${{ matrix.target }}
+      - uses: actions/upload-artifact@v4
+        with:
+          name: gif-search-${{ matrix.target }}
+          path: v3/dist/*
