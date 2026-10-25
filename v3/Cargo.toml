@@ -1,0 +1,21 @@
+[package]
+name = "tezbar-gif-search"
+version = "1.0.0"
+edition = "2021"
+license = "Apache-2.0 AND MIT"
+description = "Standalone GIF Search native process for Tezbar"
+
+[features]
+fixture-http = []
+
+[dependencies]
+tezbar-extension-sdk = { git = "https://github.com/almatkai/tezbar-extension-sdk-rust.git", rev = "9f91afcc071c3f301414dc62b33cfeac7d89a0cf" }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+tokio = { version = "1", features = ["rt-multi-thread", "macros", "fs", "net", "io-util", "sync", "time"] }
+reqwest = { version = "0.12", default-features = false, features = ["rustls-tls", "stream"] }
+image = { version = "0.25", default-features = false, features = ["gif"] }
+sha2 = "0.10"
+uuid = { version = "1", features = ["v4"] }
+tempfile = "3"
+futures-util = "0.3"
